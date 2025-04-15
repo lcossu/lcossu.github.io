@@ -11,35 +11,17 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* BSc in Information Engineering, University of Padova, 2016
+* MSc in Bioengineering, University of Padova, 2019
+* PhD in Information Engineering (Bioengineering curricula), University of Padova, 2020
 
-Work experience
+Academic experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2025-now: Junior PostDoc Research Fellow
+  * Department of Information Engineering, University of Padova, Padova, Italy
+  * Project: Development of a clinical decision support system for data interpretation and therapy management in pediatric patients with type 1 diabetes
+  * Supervisor: Prof. Andrea Facchinetti
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
 
 Publications
 ======
@@ -59,6 +41,3 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
