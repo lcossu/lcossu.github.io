@@ -13,7 +13,7 @@ Education
 ======
 * BSc in Information Engineering, University of Padova, 2016
 * MSc in Bioengineering, University of Padova, 2019
-* PhD in Information Engineering (Bioengineering curricula), University of Padova, 2020
+* PhD in Information Engineering (Bioengineering curriculum), University of Padova, 2025
 
 Academic experience
 ======
