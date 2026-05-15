@@ -92,7 +92,8 @@
     .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent); }
     h1 { font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 1.25rem; }
     h1 em { color: var(--accent); font-style: italic; }
-    .hero-subtitle { font-size: 1.1rem; color: var(--ink-soft); max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.75; }
+
+    .hero-subtitle { font-size: 1.1rem; color: var(--ink-soft); max-width: 480px; margin-bottom: 1.25rem; font-weight: 300; line-height: 1.75; }
     .hero-badges { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.5rem; }
     .badge { font-size: .75rem; font-weight: 500; letter-spacing: .04em; padding: .3rem .75rem; border-radius: 99px; border: 1px solid; }
     .badge-teal { color: var(--teal); border-color: var(--teal); background: var(--teal-lt); }
@@ -105,10 +106,12 @@
     .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-lt); }
     .hero-card { animation: fadeUp .8s .15s ease both; background: #fff; border-radius: var(--r-lg); padding: 2.5rem; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
-    .hero-avatar { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 2rem; color: #fff; margin-bottom: 1.5rem; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--border-acc), 0 6px 20px rgba(193,68,14,.25); flex-shrink: 0; }
+    .hero-name-row { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .hero-name-row h1 { margin-bottom: 0; }
+    .hero-avatar { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.8rem; color: #fff; flex-shrink: 0; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--border-acc), 0 6px 20px rgba(193,68,14,.25); }
     .hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
-    .hero-card h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: .25rem; }
-    .hero-card .position { font-size: .85rem; color: var(--ink-muted); margin-bottom: 1.5rem; }
+    .card-tagline { font-family: var(--font-serif); font-size: 1.8rem; color: var(--ink); font-style: italic; line-height: 1.4; margin-bottom: 1.5rem; }
+    .card-tagline em { color: var(--accent); }
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .stat { background: var(--paper); border-radius: var(--r); padding: .75rem 1rem; text-align: center; }
     .stat-n { font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent); line-height: 1; }
@@ -126,6 +129,8 @@
     h2 { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.15; letter-spacing: -.02em; }
     .section-desc { color: var(--ink-soft); max-width: 600px; margin-top: .75rem; font-size: 1rem; line-height: 1.75; }
     .divider { height: 1px; background: var(--border); margin: 0 clamp(1.5rem, 5vw, 4rem); }
+
+    .hero-about { font-size: .9rem; color: var(--ink-muted); max-width: 460px; line-height: 1.75; margin-bottom: 2rem; padding-left: .875rem; border-left: 2px solid var(--border-acc); font-style: italic; }
 
     /* ─── RESEARCH CARDS ────────────────────────────────────────── */
     .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -255,7 +260,14 @@
 <section id="hero">
   <div class="hero-text">
     <div class="hero-eyebrow" id="hero-eyebrow">Post-doctoral researcher</div>
-    <h1 id="hero-title">Loading…</h1>
+    <div class="hero-name-row">
+      <div class="hero-avatar">
+        <img src="assets/profile.jpg" alt="Luca Cossu" onerror="this.replaceWith(document.createTextNode('LC'))">
+      </div>
+      <h1 id="hero-title">Luca Cossu</h1>
+    </div>
+    <p class="hero-about" id="hero-institution"></p>
+    <!-- <p class="hero-about" id="hero-about"></p> -->
     <p class="hero-subtitle" id="hero-subtitle"></p>
     <div class="hero-badges" id="hero-badges"></div>
     <div class="hero-cta">
@@ -267,11 +279,7 @@
     </div>
   </div>
   <div class="hero-card">
-    <div class="hero-avatar">
-      <img src="assets/profile.jpg" alt="Luca Cossu" onerror="this.replaceWith(document.createTextNode('LC'))">
-    </div>
-    <h3 id="card-name">—</h3>
-    <p class="position" id="card-position">—</p>
+    <p class="card-tagline" id="card-tagline"></p>
     <div class="stat-grid" id="stat-grid"></div>
     <div class="contact-links" id="contact-links"></div>
   </div>
@@ -451,18 +459,18 @@ function renderProfile(p, pubs, scholar) {
   document.querySelector('meta[name="description"]').content =
     `Post-doctoral researcher at ${p.institution} working on digital health, wearable sensors, type 1 diabetes, and AI-powered clinical decision support.`;
   document.getElementById('hero-eyebrow').textContent = p.title;
-  document.getElementById('hero-title').innerHTML = p.hero_tagline;
+  const [first, ...rest] = p.name.split(' ');
+  document.getElementById('hero-title').innerHTML =
+    `${first} <span style="color:var(--accent)">${rest.join(' ')}</span>`;
+  document.getElementById('card-tagline').innerHTML = p.hero_tagline;
+  document.getElementById('hero-institution').textContent = `${p.institution}`;
   document.getElementById('hero-subtitle').textContent = p.hero_subtitle;
+  // document.getElementById('hero-about').textContent = p.hero_about;
 
   // Badges
   const badgeColors = { teal: 'badge-teal', acc: 'badge-acc', gold: 'badge-gold' };
   document.getElementById('hero-badges').innerHTML =
     p.badges.map(b => `<span class="badge ${badgeColors[b.color]}">${b.text}</span>`).join('');
-
-  // Hero card
-  document.getElementById('card-name').textContent = p.name;
-  document.getElementById('card-position').innerHTML =
-    `${p.title}<br>${p.institution}`;
 
   const journals    = pubs.filter(x => x.type === 'journal').length;
   const conferences = pubs.filter(x => x.type === 'conference').length;
@@ -472,7 +480,6 @@ function renderProfile(p, pubs, scholar) {
     <div class="stat"><div class="stat-n">${conferences}</div><div class="stat-label">Conference papers</div></div>
     <div class="stat"><div class="stat-n">${scholar?.hindex ?? '—'}</div><div class="stat-label">H-index (GS)</div></div>
     <div class="stat"><div class="stat-n">${scholar?.citedby ?? '—'}</div><div class="stat-label">Citations (GS)</div></div>`;
-
   document.getElementById('contact-links').innerHTML = `
     <a href="mailto:${p.email}" class="contact-link">
       ${iconEmail()} ${p.email}
@@ -483,9 +490,13 @@ function renderProfile(p, pubs, scholar) {
     <a href="${p.links.orcid}" target="_blank" rel="noopener" class="contact-link">
       ${iconExternal()} ORCID
     </a>
-    <a href="${p.links.linkedin}" target="_blank" rel="noopener" class="contact-link">
-      ${iconExternal()} LinkedIn
-    </a>`;
+    <a href="${p.links.github}" target="_blank" rel="noopener" class="contact-link">
+      ${iconExternal()} Github
+      </a>
+      <a href="${p.links.linkedin}" target="_blank" rel="noopener" class="contact-link">
+        ${iconExternal()} LinkedIn
+      </a>
+    `;
 
   // Summary for pub section — counts from data, details from profile
   const firstAuth = pubs.filter(x => x.first_author && x.type === 'journal').length;

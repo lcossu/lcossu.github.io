@@ -8,7 +8,8 @@
   "links": {
     "scholar": "https://scholar.google.com/citations?user=QYEOj6wAAAAJ&hl=en",
     "orcid":   "https://orcid.org/0000-0002-8804-0722",
-    "linkedin": "https://www.linkedin.com/in/luca-cossu"
+    "linkedin": "https://www.linkedin.com/in/luca-cossu",
+    "github": "https://github.com/lcossu"
   },
   "hero_tagline": "Digital health for <em>chronic</em> diseases",
   "hero_subtitle": "I build AI-powered clinical decision support systems, wearable sensor pipelines, and digital twin platforms — bridging biomedical engineering and real-world clinical care.",
