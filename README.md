@@ -1,52 +1,159 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Luca Cossu — Personal Academic Website
 
-![Academic Pages template example](images/homepage.png "Academic Pages template example")
-
-# Getting Started
-
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
-
-See more info at https://academicpages.github.io/
-
-## Using Docker (recommended)
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
-
-```bash
-docker compose up
-```
-
-You should now be able to access the website from `localhost:4000`.
-
-# Maintenance
-
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+Static site for GitHub Pages. All content lives in `data/*.json` —
+you never need to touch `index.html` for routine updates.
 
 ---
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+## Project structure
+
+```
+/
+├── index.html          # Layout, styles, rendering logic (rarely edited)
+├── README.md
+└── data/
+    ├── profile.json        # Name, title, stats, badges, contact links
+    ├── research.json       # Research area cards
+    ├── publications.json   # Full publication list
+    ├── projects.json       # Research projects & grants
+    ├── education.json      # Degree & career timeline
+    ├── awards.json         # Awards and honors
+    └── teaching.json       # Courses and co-advised theses
+```
+
+---
+
+## Deploy on GitHub Pages
+
+1. Create a repo called `<your-github-username>.github.io`
+2. Push the entire folder (with `data/`) to the `main` branch
+3. Go to **Settings → Pages → Source → Deploy from branch: `main` / `/ (root)`**
+4. Your site goes live at `https://<your-github-username>.github.io`
+
+> **Note:** GitHub Pages serves files via HTTP, so `fetch()` works correctly.
+> If you open `index.html` directly as a local file (`file://`), the browser
+> blocks `fetch()` and shows a warning. Use a local server instead:
+> ```
+> python3 -m http.server
+> # then open http://localhost:8000
+> ```
+
+---
+
+## How to update content
+
+### Add a new publication — `data/publications.json`
+
+Copy an existing object and fill in the fields:
+
+```json
+{
+  "year": 2026,
+  "type": "journal",          // "journal" | "conference" | "book"
+  "first_author": true,       // true = bold title + appears in "First author" filter
+  "title": "Your paper title here",
+  "authors": "L. Cossu, G. Cappon, A. Facchinetti",
+  "authors_note": "* equally contributed",   // optional
+  "venue": "Journal of Diabetes Science and Technology",
+  "doi": "10.xxxx/xxxxxx"    // omit field if no DOI yet
+}
+```
+
+Publications are rendered in the order they appear in the file.
+Sort descending by year (newest first) for consistency.
+
+---
+
+### Add a research project — `data/projects.json`
+
+```json
+{
+  "title": "Project Name — Funder",
+  "period": "2025–2027",
+  "tag_color": "teal",        // "teal" | "gold"
+  "description": "What you did in this project.",
+  "pills": ["Funder", "Budget", "Topic", "Tool"]
+}
+```
+
+---
+
+### Add a research area card — `data/research.json`
+
+```json
+{
+  "icon": "🧬",
+  "color": "#ddf0f1",         // background of the icon box
+  "title": "New Research Topic",
+  "description": "Brief description shown on the card."
+}
+```
+
+---
+
+### Update your stats — `data/profile.json`
+
+Edit the `stats` array:
+
+```json
+"stats": [
+  { "value": "15",  "label": "Journal papers" },
+  { "value": "9",   "label": "Conference papers" },
+  { "value": "6",   "label": "H-index" },
+  { "value": "120", "label": "Citations (GS)" }
+]
+```
+
+---
+
+### Update contact / profile links — `data/profile.json`
+
+```json
+"links": {
+  "scholar":  "https://scholar.google.com/citations?user=YOUR_ID",
+  "orcid":    "https://orcid.org/YOUR-ORCID",
+  "linkedin": "https://www.linkedin.com/in/your-handle"
+}
+```
+
+---
+
+### Add a thesis to co-advisorship — `data/teaching.json`
+
+Append to the `theses` array:
+
+```json
+{
+  "period": "2025–2026",
+  "name": "Student Name",
+  "title": "Thesis title here"
+}
+```
+
+---
+
+### Add an award — `data/awards.json`
+
+```json
+{
+  "year": 2026,
+  "title": "Award Name",
+  "description": "Brief description of what the award is for."
+}
+```
+
+---
+
+## Theming
+
+All colors are CSS variables at the top of `index.html`:
+
+```css
+--accent: #c1440e;   /* terracotta — change this to retheme everything */
+--teal:   #1b6b72;
+--gold:   #b08030;
+--ink:    #0f1117;
+--paper:  #f7f6f2;
+```
+
+Changing `--accent` alone is enough to completely retheme the site.

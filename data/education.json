@@ -1,0 +1,26 @@
+[
+  {
+    "period": "Oct 2024 – Present",
+    "title": "Post-doctoral Research Fellow",
+    "subtitle": "Department of Information Engineering, University of Padova · Supervisor: Prof. Andrea Facchinetti",
+    "description": "Research fellowship on clinical decision support systems for pediatric T1D management. Developing digital twin methodologies with ReplayBG and LLM-based data interpretation tools."
+  },
+  {
+    "period": "Oct 2021 – Sep 2024",
+    "title": "Ph.D. in Information Engineering",
+    "subtitle": "University of Padova · Advisor: Prof. Andrea Facchinetti",
+    "description": "Thesis: <em>\"Algorithms and Digital Health Solutions for Wearable Sensor Data Acquisition, Processing and Interpretation in Chronic Diseases\"</em>. Defended March 2025. Visiting periods at Inselspital Bern, University of Cagliari, and Universitat Politècnica de València."
+  },
+  {
+    "period": "Dec 2019",
+    "title": "Master's Degree in Bioengineering — 102/110",
+    "subtitle": "University of Padova",
+    "description": "Thesis on development of a mobile platform prototype for T1D clinical trials. Advisors: Prof. Giovanni Sparacino & Prof. Andrea Facchinetti."
+  },
+  {
+    "period": "Nov 2016",
+    "title": "Bachelor's Degree in Information Engineering",
+    "subtitle": "University of Padova",
+    "description": "Thesis on mathematical modeling of pancreatic alpha-cells and glucagon secretion. Advisor: Prof. Morten Gram Pedersen."
+  }
+]

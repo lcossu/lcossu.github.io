@@ -1,0 +1,25 @@
+{
+  "name": "Luca Cossu",
+  "title": "Post-doctoral Research Fellow",
+  "institution": "Department of Information Engineering (DEI), University of Padova",
+  "location": "Padova, Italy",
+  "email": "luca.cossu@unipd.it",
+  "orcid_id": "0000-0002-8804-0722",
+  "links": {
+    "scholar": "https://scholar.google.com/citations?user=QYEOj6wAAAAJ&hl=en",
+    "orcid":   "https://orcid.org/0000-0002-8804-0722",
+    "linkedin": "https://www.linkedin.com/in/luca-cossu"
+  },
+  "hero_tagline": "Digital health for <em>chronic</em> diseases",
+  "hero_subtitle": "I build AI-powered clinical decision support systems, wearable sensor pipelines, and digital twin platforms — bridging biomedical engineering and real-world clinical care.",
+  "badges": [
+    { "text": "Type 1 Diabetes",   "color": "teal" },
+    { "text": "CGM & Wearables",   "color": "teal" },
+    { "text": "Digital Twins",     "color": "acc"  },
+    { "text": "LLMs for Health",   "color": "acc"  },
+    { "text": "mHealth Platforms", "color": "gold" }
+  ],
+  "summary": {
+    "abstracts": "14 (11 as first author)"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "🩺",
+    "color": "#ddf0f1",
+    "title": "Type 1 Diabetes & CGM",
+    "description": "CGM-based decision support, glycemic metrics for special populations (post-bariatric, pediatric), and meal detection algorithms combining glucose and heart rate signals."
+  },
+  {
+    "icon": "🔁",
+    "color": "#f5e6df",
+    "title": "Digital Twins",
+    "description": "Retrospective glycemic simulation with ReplayBG to test therapeutic scenarios safely, identify optimal insulin dosing, and power patient education through experiential learning."
+  },
+  {
+    "icon": "🤖",
+    "color": "#f5edda",
+    "title": "AI & LLMs for Clinical Support",
+    "description": "Large language models for automatic AGP report interpretation, pattern summarization, and clinician-facing decision support interfaces co-designed with diabetologists."
+  },
+  {
+    "icon": "⌚",
+    "color": "#ddf0f1",
+    "title": "Wearable Sensor Processing",
+    "description": "End-to-end pipelines for smartwatch signals (HR, GSR, accelerometry): Bayesian adaptive filtering, feature extraction, and exploitation in predictive AI models for chronic diseases."
+  },
+  {
+    "icon": "📱",
+    "color": "#f5e6df",
+    "title": "mHealth Platforms (IMPACT)",
+    "description": "IMPACT — an integrated mobile platform for clinical trial management, multi-sensor data collection, remote patient monitoring, and digital twin integration."
+  },
+  {
+    "icon": "🎯",
+    "color": "#f5edda",
+    "title": "Co-design of clinical solutions",
+    "description": "Involvement of stakeholders during the development phases of clinical solutions with co-design workshops for grounding and tailoring solutions in real-life environment."
+  }
+]

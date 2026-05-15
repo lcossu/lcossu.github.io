@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luca Cossu – Biomedical Engineer & Researcher</title>
+  <meta name="description" content="Post-doctoral researcher at University of Padova working on digital health, wearable sensors, type 1 diabetes, and AI-powered clinical decision support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── DESIGN TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink:        #0f1117;
+      --ink-soft:   #3a3d4a;
+      --ink-muted:  #6b7080;
+      --paper:      #f7f6f2;
+      --paper-warm: #ede9e0;
+      --accent:     #c1440e;
+      --accent-lt:  #f5e6df;
+      --teal:       #1b6b72;
+      --teal-lt:    #ddf0f1;
+      --gold:       #b08030;
+      --gold-lt:    #f5edda;
+      --border:     rgba(15,17,23,.10);
+      --border-acc: rgba(193,68,14,.25);
+      --shadow-sm:  0 2px 8px rgba(15,17,23,.07);
+      --shadow-md:  0 6px 24px rgba(15,17,23,.10);
+      --r:          6px;
+      --r-lg:       12px;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+      --font-mono:  'DM Mono', monospace;
+      --nav-h:      64px;
+    }
+
+    /* ─── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); background: var(--paper); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--paper-warm); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      background: rgba(247,246,242,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.2rem; color: var(--ink); letter-spacing: -.01em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500; letter-spacing: .03em;
+      text-transform: uppercase; color: var(--ink-soft);
+      transition: color .2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 2px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left; transition: transform .25s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); transition: .3s; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      padding: calc(var(--nav-h) + 5rem) clamp(1.5rem, 5vw, 4rem) 5rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .hero-text { animation: fadeUp .8s ease both; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--font-mono); font-size: .8rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent); }
+    h1 { font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem); line-height: 1.08; letter-spacing: -.02em; margin-bottom: 1.25rem; }
+    h1 em { color: var(--accent); font-style: italic; }
+    .hero-subtitle { font-size: 1.1rem; color: var(--ink-soft); max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.75; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.5rem; }
+    .badge { font-size: .75rem; font-weight: 500; letter-spacing: .04em; padding: .3rem .75rem; border-radius: 99px; border: 1px solid; }
+    .badge-teal { color: var(--teal); border-color: var(--teal); background: var(--teal-lt); }
+    .badge-acc  { color: var(--accent); border-color: var(--accent); background: var(--accent-lt); }
+    .badge-gold { color: var(--gold); border-color: var(--gold); background: var(--gold-lt); }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: var(--r); font-weight: 500; font-size: .9rem; transition: all .2s; cursor: pointer; border: none; font-family: var(--font-sans); }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(193,68,14,.35); }
+    .btn-primary:hover { background: #a83a0b; box-shadow: 0 6px 20px rgba(193,68,14,.45); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-lt); }
+    .hero-card { animation: fadeUp .8s .15s ease both; background: #fff; border-radius: var(--r-lg); padding: 2.5rem; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+    .hero-avatar { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 2rem; color: #fff; margin-bottom: 1.5rem; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--border-acc), 0 6px 20px rgba(193,68,14,.25); flex-shrink: 0; }
+    .hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+    .hero-card h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: .25rem; }
+    .hero-card .position { font-size: .85rem; color: var(--ink-muted); margin-bottom: 1.5rem; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat { background: var(--paper); border-radius: var(--r); padding: .75rem 1rem; text-align: center; }
+    .stat-n { font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: .72rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .05em; margin-top: .2rem; }
+    .contact-links { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .6rem; }
+    .contact-link { display: flex; align-items: center; gap: .6rem; font-size: .85rem; color: var(--ink-soft); padding: .5rem .75rem; border-radius: var(--r); transition: background .2s, color .2s; }
+    .contact-link:hover { background: var(--accent-lt); color: var(--accent); }
+
+    /* ─── SECTIONS ──────────────────────────────────────────────── */
+    .section { padding: 6rem clamp(1.5rem, 5vw, 4rem); max-width: 1200px; margin: 0 auto; }
+    .wrapper-alt { background: #fff; }
+    .section-header { margin-bottom: 3.5rem; }
+    .section-tag { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .15em; color: var(--accent); margin-bottom: .75rem; display: flex; align-items: center; gap: .5rem; }
+    .section-tag::before { content: ''; display: block; width: 20px; height: 1.5px; background: var(--accent); }
+    h2 { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.15; letter-spacing: -.02em; }
+    .section-desc { color: var(--ink-soft); max-width: 600px; margin-top: .75rem; font-size: 1rem; line-height: 1.75; }
+    .divider { height: 1px; background: var(--border); margin: 0 clamp(1.5rem, 5vw, 4rem); }
+
+    /* ─── RESEARCH CARDS ────────────────────────────────────────── */
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .research-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem; transition: box-shadow .25s, transform .25s, border-color .25s; }
+    .research-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--border-acc); }
+    .research-icon { width: 44px; height: 44px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
+    .research-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: .5rem; }
+    .research-card p { font-size: .875rem; color: var(--ink-soft); line-height: 1.65; }
+
+    /* ─── PUBLICATIONS ──────────────────────────────────────────── */
+    .pub-filter { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .filter-btn { padding: .4rem 1rem; border-radius: 99px; border: 1.5px solid var(--border); background: transparent; font-family: var(--font-sans); font-size: .8rem; font-weight: 500; cursor: pointer; color: var(--ink-soft); transition: all .2s; }
+    .filter-btn.active, .filter-btn:hover { border-color: var(--accent); background: var(--accent); color: #fff; }
+    .pub-list { display: flex; flex-direction: column; gap: 1rem; }
+    .pub-item { background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: start; transition: box-shadow .2s, border-color .2s; }
+    .pub-item:hover { box-shadow: var(--shadow-sm); border-color: var(--border-acc); }
+    .pub-item.hidden { display: none; }
+    .pub-year { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-muted); padding-top: .2rem; min-width: 42px; }
+    .pub-title { font-weight: 500; font-size: .95rem; margin-bottom: .35rem; line-height: 1.45; }
+    .pub-authors { font-size: .82rem; color: var(--ink-muted); margin-bottom: .4rem; }
+    .pub-venue { font-size: .82rem; color: var(--teal); font-style: italic; }
+    .pub-note { font-size: .78rem; color: var(--ink-muted); margin-top: .25rem; }
+    .pub-type { display: inline-block; font-size: .68rem; font-family: var(--font-mono); letter-spacing: .06em; text-transform: uppercase; padding: .15rem .45rem; border-radius: 3px; margin-bottom: .4rem; }
+    .pub-type-journal    { background: var(--teal-lt);   color: var(--teal); }
+    .pub-type-conference { background: var(--accent-lt); color: var(--accent); }
+    .pub-type-book       { background: var(--gold-lt);   color: var(--gold); }
+    .pub-doi { display: inline-flex; align-items: center; gap: .3rem; font-size: .78rem; font-family: var(--font-mono); color: var(--ink-muted); margin-top: .4rem; transition: color .2s; }
+    .pub-doi:hover { color: var(--accent); }
+
+    /* ─── PROJECTS ──────────────────────────────────────────────── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    .project-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem; transition: box-shadow .25s, transform .25s; }
+    .project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .85rem; }
+    .project-title { font-weight: 500; font-size: 1rem; }
+    .project-tag { font-size: .7rem; font-weight: 500; padding: .2rem .6rem; border-radius: 99px; white-space: nowrap; flex-shrink: 0; }
+    .project-tag-teal { background: var(--teal-lt); color: var(--teal); }
+    .project-tag-gold { background: var(--gold-lt); color: var(--gold); }
+    .project-desc { font-size: .875rem; color: var(--ink-soft); line-height: 1.65; margin-bottom: 1rem; }
+    .project-footer { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .project-pill { font-size: .72rem; padding: .2rem .55rem; border-radius: 99px; background: var(--paper-warm); color: var(--ink-muted); font-weight: 500; }
+
+    /* ─── TIMELINE ──────────────────────────────────────────────── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--teal)); border-radius: 2px; }
+    .tl-item { position: relative; margin-bottom: 2.5rem; }
+    .tl-item::before { content: ''; position: absolute; left: calc(-2rem - 4px); top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--paper); box-shadow: 0 0 0 2px var(--accent); }
+    .tl-date { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); margin-bottom: .35rem; letter-spacing: .04em; }
+    .tl-title { font-weight: 500; font-size: 1rem; margin-bottom: .25rem; }
+    .tl-subtitle { font-size: .875rem; color: var(--ink-muted); margin-bottom: .5rem; }
+    .tl-desc { font-size: .875rem; color: var(--ink-soft); line-height: 1.65; }
+
+    /* ─── AWARDS ────────────────────────────────────────────────── */
+    .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .award-card { background: linear-gradient(135deg, var(--gold-lt) 0%, #fff 100%); border: 1px solid rgba(176,128,48,.25); border-radius: var(--r-lg); padding: 1.5rem; }
+    .award-year { font-family: var(--font-mono); font-size: .78rem; color: var(--gold); margin-bottom: .6rem; }
+    .award-title { font-weight: 500; font-size: .95rem; margin-bottom: .4rem; }
+    .award-desc { font-size: .82rem; color: var(--ink-soft); }
+
+    /* ─── TEACHING ──────────────────────────────────────────────── */
+    .teaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .teaching-subtitle { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 1.25rem; }
+    .thesis-list { display: flex; flex-direction: column; gap: .75rem; }
+    .thesis-item { font-size: .875rem; color: var(--ink-soft); padding-left: 1.25rem; position: relative; }
+    .thesis-item::before { content: '🎓'; position: absolute; left: 0; top: 0; font-size: .8rem; }
+    .thesis-item strong { color: var(--ink); font-weight: 500; }
+
+    /* ─── CONTACT ───────────────────────────────────────────────── */
+    #contact { text-align: center; }
+    #contact .section-tag { justify-content: center; }
+    .contact-cta { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
+    .contact-address { margin-top: 3rem; font-size: .875rem; color: var(--ink-muted); }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 3rem clamp(1.5rem, 5vw, 4rem); text-align: center; }
+    .footer-name { font-family: var(--font-serif); font-size: 1.5rem; color: #fff; margin-bottom: .5rem; }
+    footer p { font-size: .875rem; margin-bottom: 1.25rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .footer-links a { color: rgba(255,255,255,.55); font-size: .85rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--accent); }
+    footer .small { font-size: .75rem; color: rgba(255,255,255,.3); }
+
+    /* ─── LOADING STATE ─────────────────────────────────────────── */
+    .loading { display: flex; align-items: center; justify-content: center; padding: 3rem; color: var(--ink-muted); font-size: .875rem; gap: .5rem; }
+    .loading::before { content: ''; width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; flex-shrink: 0; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── ANIMATIONS ────────────────────────────────────────────── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; padding-top: calc(var(--nav-h) + 3rem); }
+      .hero-card { order: -1; }
+      .stat-grid { grid-template-columns: repeat(4, 1fr); }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--paper); padding: 1rem 2rem 2rem; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); gap: 1.25rem; }
+      .teaching-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Luca <span>Cossu</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow" id="hero-eyebrow">Post-doctoral researcher</div>
+    <h1 id="hero-title">Loading…</h1>
+    <p class="hero-subtitle" id="hero-subtitle"></p>
+    <div class="hero-badges" id="hero-badges"></div>
+    <div class="hero-cta">
+      <a href="#publications" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Publications
+      </a>
+      <a href="#contact" class="btn btn-secondary">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-avatar">
+      <img src="assets/profile.jpg" alt="Luca Cossu" onerror="this.replaceWith(document.createTextNode('LC'))">
+    </div>
+    <h3 id="card-name">—</h3>
+    <p class="position" id="card-position">—</p>
+    <div class="stat-grid" id="stat-grid"></div>
+    <div class="contact-links" id="contact-links"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESEARCH -->
+<div class="wrapper-alt">
+  <section id="research" class="section">
+    <div class="section-header reveal">
+      <div class="section-tag">Research Areas</div>
+      <h2>What I work on</h2>
+      <p class="section-desc">My work sits at the intersection of biomedical engineering, artificial intelligence, and clinical practice — always with an eye on real-world deployment.</p>
+    </div>
+    <div class="research-grid" id="research-grid">
+      <div class="loading">Loading research areas…</div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="section">
+  <div class="section-header reveal">
+    <div class="section-tag">Scientific Production</div>
+    <h2>Selected publications</h2>
+    <p class="section-desc" id="pub-summary">Loading…</p>
+  </div>
+  <div class="pub-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="journal">Journals</button>
+    <button class="filter-btn" data-filter="conference">Conferences</button>
+    <button class="filter-btn" data-filter="book">Book chapters</button>
+    <button class="filter-btn" data-filter="first">First author</button>
+  </div>
+  <div class="pub-list" id="pub-list">
+    <div class="loading">Loading publications…</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<div class="wrapper-alt">
+  <section id="projects" class="section">
+    <div class="section-header reveal">
+      <div class="section-tag">Research Projects</div>
+      <h2>Grants &amp; initiatives</h2>
+      <p class="section-desc">Active participation in European, national, and local research projects.</p>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <div class="loading">Loading projects…</div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="section-header reveal">
+    <div class="section-tag">Education &amp; Career</div>
+    <h2>Academic path</h2>
+  </div>
+  <div class="timeline" id="education-timeline">
+    <div class="loading">Loading…</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AWARDS -->
+<div class="wrapper-alt">
+  <section id="awards" class="section">
+    <div class="section-header reveal">
+      <div class="section-tag">Recognition</div>
+      <h2>Awards &amp; honors</h2>
+    </div>
+    <div class="awards-grid" id="awards-grid">
+      <div class="loading">Loading…</div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- TEACHING -->
+<section id="teaching" class="section">
+  <div class="section-header reveal">
+    <div class="section-tag">Teaching</div>
+    <h2>Teaching &amp; mentoring</h2>
+    <p class="section-desc" id="teaching-summary">—</p>
+  </div>
+  <div class="teaching-grid">
+    <div>
+      <h3 class="teaching-subtitle">Courses</h3>
+      <div class="timeline" id="courses-timeline">
+        <div class="loading">Loading…</div>
+      </div>
+    </div>
+    <div>
+      <h3 class="teaching-subtitle">Thesis co-advisorship</h3>
+      <div class="thesis-list" id="thesis-list">
+        <div class="loading">Loading…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<div class="wrapper-alt">
+  <section id="contact" class="section">
+    <div class="section-header reveal">
+      <div class="section-tag">Get in touch</div>
+      <h2>Let's collaborate</h2>
+      <p class="section-desc" style="text-align:center; margin: .75rem auto 0;">
+        I'm always open to discussing research collaborations, clinical translation opportunities, or digital health projects.
+      </p>
+    </div>
+    <div class="contact-cta" id="contact-cta"></div>
+    <p class="contact-address" id="contact-address"></p>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name" id="footer-name">Luca Cossu</div>
+  <p id="footer-position">Post-doctoral researcher · University of Padova</p>
+  <div class="footer-links">
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p class="small">© <span id="footer-year"></span> Luca Cossu · Hosted on GitHub Pages</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   DATA LOADING
+   All content comes from /data/*.json — edit those files, not here.
+═══════════════════════════════════════════════════════════════ */
+
+const DATA_FILES = {
+  profile:      'data/profile.json',
+  scholar:      'data/scholar.json',
+  research:     'data/research.json',
+  publications: 'data/publications.json',
+  projects:     'data/projects.json',
+  education:    'data/education.json',
+  awards:       'data/awards.json',
+  teaching:     'data/teaching.json',
+};
+
+async function loadAll() {
+  const entries = await Promise.all(
+    Object.entries(DATA_FILES).map(([key, path]) =>
+      fetch(path).then(r => r.json()).then(data => [key, data])
+    )
+  );
+  return Object.fromEntries(entries);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDERERS — one function per section
+═══════════════════════════════════════════════════════════════ */
+
+function renderProfile(p, pubs, scholar) {
+  // Hero text
+  document.title = `${p.name} – Biomedical Engineer & Researcher`;
+  document.querySelector('meta[name="description"]').content =
+    `Post-doctoral researcher at ${p.institution} working on digital health, wearable sensors, type 1 diabetes, and AI-powered clinical decision support.`;
+  document.getElementById('hero-eyebrow').textContent = p.title;
+  document.getElementById('hero-title').innerHTML = p.hero_tagline;
+  document.getElementById('hero-subtitle').textContent = p.hero_subtitle;
+
+  // Badges
+  const badgeColors = { teal: 'badge-teal', acc: 'badge-acc', gold: 'badge-gold' };
+  document.getElementById('hero-badges').innerHTML =
+    p.badges.map(b => `<span class="badge ${badgeColors[b.color]}">${b.text}</span>`).join('');
+
+  // Hero card
+  document.getElementById('card-name').textContent = p.name;
+  document.getElementById('card-position').innerHTML =
+    `${p.title}<br>${p.institution}`;
+
+  const journals    = pubs.filter(x => x.type === 'journal').length;
+  const conferences = pubs.filter(x => x.type === 'conference').length;
+  const books       = pubs.filter(x => x.type === 'book').length;
+  document.getElementById('stat-grid').innerHTML = `
+    <div class="stat"><div class="stat-n">${journals}</div><div class="stat-label">Journal papers</div></div>
+    <div class="stat"><div class="stat-n">${conferences}</div><div class="stat-label">Conference papers</div></div>
+    <div class="stat"><div class="stat-n">${scholar?.hindex ?? '—'}</div><div class="stat-label">H-index (GS)</div></div>
+    <div class="stat"><div class="stat-n">${scholar?.citedby ?? '—'}</div><div class="stat-label">Citations (GS)</div></div>`;
+
+  document.getElementById('contact-links').innerHTML = `
+    <a href="mailto:${p.email}" class="contact-link">
+      ${iconEmail()} ${p.email}
+    </a>
+    <a href="${p.links.scholar}" target="_blank" rel="noopener" class="contact-link">
+      ${iconExternal()} Google Scholar
+    </a>
+    <a href="${p.links.orcid}" target="_blank" rel="noopener" class="contact-link">
+      ${iconExternal()} ORCID
+    </a>
+    <a href="${p.links.linkedin}" target="_blank" rel="noopener" class="contact-link">
+      ${iconExternal()} LinkedIn
+    </a>`;
+
+  // Summary for pub section — counts from data, details from profile
+  const firstAuth = pubs.filter(x => x.first_author && x.type === 'journal').length;
+  document.getElementById('pub-summary').innerHTML =
+    [
+      `${journals} journal papers (${firstAuth} first/co-first)`,
+      `${conferences} conference papers`,
+      `${books} book chapters`,
+      `${p.summary.abstracts} abstracts`,
+    ].map(s => `<span style="white-space:nowrap">${s}</span>`).join(' &nbsp;·&nbsp; ') +
+    `<br><span style="font-size:.82rem;color:var(--ink-muted);"><strong>Bold</strong> = first or co-first author</span>`;
+
+  // Contact section
+  document.getElementById('contact-cta').innerHTML = `
+    <a href="mailto:${p.email}" class="btn btn-primary" style="font-size:1rem;padding:.9rem 2rem;">
+      ${iconEmail()} Send an email
+    </a>
+    <a href="${p.links.scholar}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:1rem;padding:.9rem 2rem;">Google Scholar</a>
+    <a href="${p.links.orcid}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:1rem;padding:.9rem 2rem;">ORCID</a>
+    <a href="${p.links.linkedin}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:1rem;padding:.9rem 2rem;">LinkedIn</a>`;
+  document.getElementById('contact-address').innerHTML =
+    `${p.institution}<br>${p.location}`;
+
+  // Footer
+  document.getElementById('footer-name').textContent = p.name;
+  document.getElementById('footer-position').textContent =
+    `${p.title} · ${p.institution.split('(')[0].trim()}`;
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+}
+
+function extractEndYear(str) {
+  const s = String(str);
+  if (/present|ongoing/i.test(s)) return 9999;
+  const y4 = s.match(/\b(19|20)\d{2}\b/g);
+  if (y4) return Math.max(...y4.map(Number));
+  // Academic year "YY/ZZ" — take the last ZZ
+  const ay = s.match(/\d{2}\/(\d{2})/g);
+  if (ay) { const p = ay[ay.length - 1].split('/')[1]; return (parseInt(p) < 50 ? 2000 : 1900) + parseInt(p); }
+  return 0;
+}
+
+function renderResearch(areas) {
+  document.getElementById('research-grid').innerHTML = areas.map(a => `
+    <div class="research-card reveal">
+      <div class="research-icon" style="background:${a.color};">${a.icon}</div>
+      <h3>${a.title}</h3>
+      <p>${a.description}</p>
+    </div>`).join('');
+}
+
+function renderPublications(pubs) {
+  const typeLabel = { journal: 'Journal', conference: 'Conference', book: 'Book Chapter' };
+  document.getElementById('pub-list').innerHTML = pubs.slice().sort((a,b) => b.year - a.year).map(p => `
+    <div class="pub-item" data-type="${p.type}" data-first="${p.first_author}">
+      <div class="pub-year">${p.year}</div>
+      <div>
+        <span class="pub-type pub-type-${p.type}">${typeLabel[p.type] || p.type}</span>
+        <div class="pub-title">${p.first_author ? `<strong>${p.title}</strong>` : p.title}</div>
+        <div class="pub-authors">${p.authors}</div>
+        ${p.authors_note ? `<div class="pub-note">${p.authors_note}</div>` : ''}
+        <div class="pub-venue">${p.venue}</div>
+        ${p.doi ? `<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="pub-doi">↗ ${p.doi}</a>` : ''}
+      </div>
+    </div>`).join('');
+
+  // Filter logic
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.pub-item').forEach(item => {
+        const match =
+          filter === 'all'  ||
+          (filter === 'first' && item.dataset.first === 'true') ||
+          item.dataset.type === filter;
+        item.classList.toggle('hidden', !match);
+      });
+    });
+  });
+}
+
+function renderProjects(projects) {
+  document.getElementById('projects-grid').innerHTML = projects.slice().sort((a,b) => extractEndYear(b.period) - extractEndYear(a.period)).map(p => `
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-title">${p.title}</div>
+        <span class="project-tag project-tag-${p.tag_color}">${p.period}</span>
+      </div>
+      <p class="project-desc">${p.description}</p>
+      <div class="project-footer">
+        ${p.pills.map(pill => `<span class="project-pill">${pill}</span>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function renderEducation(items) {
+  document.getElementById('education-timeline').innerHTML = items.slice().sort((a,b) => extractEndYear(b.period) - extractEndYear(a.period)).map(e => `
+    <div class="tl-item reveal">
+      <div class="tl-date">${e.period}</div>
+      <div class="tl-title">${e.title}</div>
+      <div class="tl-subtitle">${e.subtitle}</div>
+      <p class="tl-desc">${e.description}</p>
+    </div>`).join('');
+}
+
+function renderAwards(awards) {
+  document.getElementById('awards-grid').innerHTML = awards.slice().sort((a,b) => b.year - a.year).map(a => `
+    <div class="award-card reveal">
+      <div class="award-year">${a.year}</div>
+      <div class="award-title">${a.title}</div>
+      <p class="award-desc">${a.description}</p>
+    </div>`).join('');
+}
+
+function renderTeaching(t) {
+  document.getElementById('teaching-summary').textContent = t.summary;
+  const sortPeriod = (a, b) => extractEndYear(b.period) - extractEndYear(a.period);
+
+  document.getElementById('courses-timeline').innerHTML = t.courses.slice().sort(sortPeriod).map(c => `
+    <div class="tl-item">
+      <div class="tl-date">${c.period}</div>
+      <div class="tl-title">${c.title}</div>
+      <div class="tl-subtitle">${c.subtitle}</div>
+      <p class="tl-desc">${c.description}</p>
+    </div>`).join('');
+
+  document.getElementById('thesis-list').innerHTML = t.theses.slice().sort(sortPeriod).map(th => `
+    <div class="thesis-item">
+      <strong>${th.name}</strong> (${th.period})<br>
+      ${th.title}
+    </div>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SVG ICONS
+═══════════════════════════════════════════════════════════════ */
+const iconEmail = () => `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`;
+const iconExternal = () => `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+/* ═══════════════════════════════════════════════════════════════
+   SCROLL & NAV BEHAVIOUR
+═══════════════════════════════════════════════════════════════ */
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ═══════════════════════════════════════════════════════════════
+   INTERSECTION OBSERVER — scroll reveal
+   Re-runs after data is rendered so dynamic cards are picked up.
+═══════════════════════════════════════════════════════════════ */
+function initReveal() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOOT
+═══════════════════════════════════════════════════════════════ */
+loadAll().then(data => {
+  renderProfile(data.profile, data.publications, data.scholar);
+  renderResearch(data.research);
+  renderPublications(data.publications);
+  renderProjects(data.projects);
+  renderEducation(data.education);
+  renderAwards(data.awards);
+  renderTeaching(data.teaching);
+  initReveal();
+}).catch(err => {
+  console.error('Failed to load site data:', err);
+  // Fallback message if fetch fails (e.g. opening file:// directly)
+  document.body.insertAdjacentHTML('afterbegin', `
+    <div style="background:#fff3cd;border:1px solid #ffc107;padding:1rem 2rem;text-align:center;font-size:.9rem;position:fixed;top:64px;left:0;right:0;z-index:200;">
+      ⚠️ Data files could not be loaded. If you're opening this locally, run a local server:
+      <code style="background:#f0f0f0;padding:.1rem .4rem;border-radius:3px;">python3 -m http.server</code>
+      then open <code>http://localhost:8000</code>
+    </div>`);
+});
+</script>
+</body>
+</html>

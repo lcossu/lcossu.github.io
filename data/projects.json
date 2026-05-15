@@ -1,0 +1,44 @@
+[
+  {
+    "title": "DARE — Digital Lifelong Prevention",
+    "period": "2022–2026",
+    "tag_color": "teal",
+    "description": "PNC-funded national initiative focused on pediatric T1D. I lead development of the TWIN clinical decision support system — mobile app, clinician web dashboard, and digital twin integration via ReplayBG. Co-design workshops with Bambino Gesù Hospital clinicians.",
+    "pills": ["MIUR PNC-I.1", "124 M€ initiative", "ReplayBG", "LLMs"]
+  },
+  {
+    "title": "BRAINTEASER — H2020",
+    "period": "2021–2025",
+    "tag_color": "teal",
+    "description": "EU H2020 project on AI for ALS and MS progression. I developed the wearable sensor preprocessing pipeline and feature extraction framework integrated in the BRAINTEASER AI models. Grant: 5.9 M€.",
+    "pills": ["Horizon 2020", "5.9 M€", "Wearables", "ALS · MS"]
+  },
+  {
+    "title": "GLUCOMFORT — PRIN 2020",
+    "period": "2022–2025",
+    "tag_color": "teal",
+    "description": "Non-invasive tattoo-based continuous glucose monitoring. I am responsible for the mobile platform for real-time BLE data acquisition, processing, and visualization of the novel sensor. Clinical trials at University Hospital of Padova.",
+    "pills": ["PRIN 2020", "638 K€", "Non-invasive CGM", "BLE"]
+  },
+  {
+    "title": "BREATHE — PRIN 2022",
+    "period": "2023–2025",
+    "tag_color": "teal",
+    "description": "Air pollution & asthma exacerbations studied via IoT and AI. I contribute to the IMPACT platform adaptation for PM2.5/PM10 and respiratory outcome monitoring across 100+ patients.",
+    "pills": ["PRIN 2022", "225 K€", "Air quality", "mHealth"]
+  },
+  {
+    "title": "Post-bariatric Hypoglycemia — SID 2021",
+    "period": "2021–2023",
+    "tag_color": "teal",
+    "description": "Clinical trial (50+ subjects, University of Bern collaboration) testing a real-time PBH forecasting algorithm integrated in the IMPACT platform. Two journal papers and a randomized controlled trial published.",
+    "pills": ["Local grant", "Bern collaboration", "Glu4"]
+  },
+  {
+    "title": "Roche Diagnostics — Consulting",
+    "period": "2025–2027",
+    "tag_color": "gold",
+    "description": "Two-year agreement between DEI-UNIPD and Roche Diagnostics International Ltd (Switzerland) for custom development and validation of the ReplayBG digital twin platform. Total income: 190 K€.",
+    "pills": ["Industry", "190 K€", "ReplayBG"]
+  }
+]

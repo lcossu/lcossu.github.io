@@ -1,0 +1,183 @@
+[
+  {
+    "year": 2026,
+    "type": "journal",
+    "first_author": true,
+    "title": "Clinical efficacy evaluation of a CGM-guided forecasting algorithm to mitigate postprandial hypoglycaemia after Roux-en-Y gastric bypass — randomized controlled clinical trial",
+    "authors": "L. Cossu*, A. Journeaux*, S. Zbinden*, F. Prendin*, O. Streicher, E. Rolfes, M. C. Fragozo-Ramos, C. Piazza, D. Vukovic, P. Nett, D. Giachino, J. Zehetner, G. Cappon, D. Herzig, A. Facchinetti, L. Bally",
+    "authors_note": "* equally contributed first authorship",
+    "venue": "Diabetes Technology and Therapeutics",
+    "doi": "10.1177/15209156261432146"
+  },
+  {
+    "year": 2025,
+    "type": "journal",
+    "first_author": true,
+    "title": "Glucose responses to aerobic exercise are influenced by glucose levels before the exercise and menstrual cycle phase in adults with type 1 diabetes on multiple daily insulin injections",
+    "authors": "L. Cossu, P. Rossetti, R. A. San Martin, F.J. Ampudia-Blasco, J.L. Diez, A. Facchinetti, J. Bondia",
+    "venue": "Diabetes Technology and Therapeutics",
+    "doi": "10.1177/15209156251395037"
+  },
+  {
+    "year": 2025,
+    "type": "journal",
+    "first_author": true,
+    "title": "CGM Profiling in Roux-en-Y Gastric Bypass, Type 1 Diabetes and Healthy Adults: Unmasking Deviations from Normoglycaemia",
+    "authors": "L. Cossu, A. Facchinetti, L. Bally",
+    "venue": "Diabetes, Obesity and Metabolism",
+    "doi": "10.1111/dom.70059"
+  },
+  {
+    "year": 2025,
+    "type": "journal",
+    "first_author": false,
+    "title": "AirPredict: An eHealth Platform for Asthma Management Leveraging Wearable Sensors, Digital Diaries, and Air Quality Monitoring to Optimize Patient Outcomes",
+    "authors": "M. Atzeni, L. Cossu, S. Gaiotti, G. Cappon, M. Tinè, D. Previtero, Y. Padrin, S. Baraldo, U. Semenzato, M. Vettoretti",
+    "venue": "Frontiers in Digital Health",
+    "doi": "10.3389/fdgth.2025.1573342"
+  },
+  {
+    "year": 2025,
+    "type": "journal",
+    "first_author": true,
+    "title": "Glu4: an open-source package for real-time forecasting and alerting post-bariatric hypoglycemia based on continuous glucose monitoring",
+    "authors": "L. Cossu, F. Prendin, G. Cappon, D. Herzig, L. Bally, A. Facchinetti",
+    "venue": "Clinical eHealth",
+    "doi": "10.1016/j.ceh.2025.01.003"
+  },
+  {
+    "year": 2024,
+    "type": "journal",
+    "first_author": true,
+    "title": "Automated Processing and Feature Extraction of Wearable Devices Signals in the Monitoring and Forecasting of Multiple Sclerosis and Amyotrophic Lateral Sclerosis Progression",
+    "authors": "L. Cossu, G. Cappon, A. Facchinetti",
+    "venue": "Frontiers in Digital Health",
+    "doi": "10.3389/fdgth.2024.1402943"
+  },
+  {
+    "year": 2024,
+    "type": "journal",
+    "first_author": true,
+    "title": "Adaptive and self-learning Bayesian filtering algorithm to statistically characterize and improve signal-to-noise ratio of heart-rate data in wearable devices",
+    "authors": "L. Cossu, G. Cappon, A. Facchinetti",
+    "venue": "Journal of the Royal Society Interface",
+    "doi": "10.1098/rsif.2024.0222"
+  },
+  {
+    "year": 2023,
+    "type": "journal",
+    "first_author": true,
+    "title": "Design and Usability Assessment of a User-Centered, Modular Platform for Real-World Data Acquisition in Clinical Trials involving Post-bariatric Surgery Patients",
+    "authors": "L. Cossu, G. Cappon, O. Streicher, D. Herzig, L. Bally, A. Facchinetti",
+    "venue": "Journal of Diabetes Science and Technology",
+    "doi": "10.1177/19322968231220061"
+  },
+  {
+    "year": 2023,
+    "type": "journal",
+    "first_author": false,
+    "title": "Randomized, Double-Blind, Placebo-Controlled Crossover Trial of Once Daily Empagliflozin 25 mg for the Treatment of Postprandial Hypoglycemia After Roux-en-Y Gastric Bypass",
+    "authors": "A. Ferreira, K. A. Schönenberger, N. Potoczna, A. Vogt, P. A. Gerber, …, L. Cossu, …, D. Herzig, L. Bally",
+    "venue": "Diabetes Technology & Therapeutics",
+    "doi": "10.1089/dia.2023.0036"
+  },
+  {
+    "year": 2023,
+    "type": "journal",
+    "first_author": false,
+    "title": "Relationship between symptom perception and postprandial glycaemic profiles in patients with post-bariatric hypoglycaemia after Roux-en-Y gastric bypass surgery",
+    "authors": "A. Tripyla, A. Ferreira, N. H. Naef, L. E. Inderbitzin, F. Prendin, L. Cossu, G. Cappon, A. Facchinetti, D. Herzig, L. Bally",
+    "venue": "Diabetes Care",
+    "doi": "10.2337/dc23-045"
+  },
+  {
+    "year": 2022,
+    "type": "journal",
+    "first_author": false,
+    "title": "Digital Solutions to Diagnose and Manage Postbariatric Hypoglycemia",
+    "authors": "K. A. Schönenberger, L. Cossu, F. Prendin, G. Cappon, J. Wu, K. L. Fuchs, S. Mayer, D. Herzig, A. Facchinetti, L. Bally",
+    "venue": "Frontiers in Nutrition",
+    "doi": "10.3389/fnut.2022.855223"
+  },
+  {
+    "year": 2021,
+    "type": "journal",
+    "first_author": false,
+    "title": "An integrated mobile platform for automated data collection and real-time patient monitoring in diabetes clinical trials",
+    "authors": "G. Cappon, L. Cossu, F. Boscari, D. Bruttomesso, G. Sparacino, A. Facchinetti",
+    "venue": "Journal of Diabetes Science and Technology",
+    "doi": "10.1177/19322968211024620"
+  },
+  {
+    "year": 2025,
+    "type": "conference",
+    "first_author": true,
+    "title": "Addressing Current Unmet Clinical Needs by Co-Designing a Novel Web Interface for Decision Support in Pediatric Type 1 Diabetes",
+    "authors": "L. Cossu, G. Cappon, E. Pellizzari, A. Deodati, R. Schiaffini, S. Cianfarani, G. Sparacino, A. Facchinetti",
+    "venue": "IEEE ICHI 2025, University of Calabria, Rende, Italy — June 2025"
+  },
+  {
+    "year": 2024,
+    "type": "conference",
+    "first_author": false,
+    "title": "Optimizing Remote Health Monitoring for Digital Platforms: Evaluating the Efficacy of Gamification in Enhancing Data Collection",
+    "authors": "M. Atzeni, L. Cossu, G. Cappon, M. Vettoretti",
+    "venue": "MIE 2024 — 34th Congress of the European Federation for Medical Informatics, Athens, Greece"
+  },
+  {
+    "year": 2023,
+    "type": "conference",
+    "first_author": true,
+    "title": "Integrating a predictive algorithm for improved post-bariatric hypoglycaemia monitoring and treatment using the IMPACT mHealth platform",
+    "authors": "L. Cossu, F. Prendin, G. Cappon, D. Herzig, L. Bally, A. Facchinetti",
+    "venue": "CIBB 2023, Padova, Italy — oral presentation"
+  },
+  {
+    "year": 2023,
+    "type": "conference",
+    "first_author": false,
+    "title": "BRAINTEASER Architecture for Integration of AI Models and Interactive Tools for ALS and MS Progression Prediction",
+    "authors": "V. Urošević, N. Vojičić, …, L. Cossu, A. Facchinetti, G. Cappon, …",
+    "venue": "ICOST 2023, Wonju, Republic of Korea"
+  },
+  {
+    "year": 2022,
+    "type": "conference",
+    "first_author": false,
+    "title": "Detection of self-reported stress level from wearable sensor data using machine learning and deep learning-based classifiers: Is it feasible?",
+    "authors": "M. Atzeni, L. Cossu, G. Cappon, M. Vettoretti",
+    "venue": "IEEE EMBC 2022, Glasgow, Scotland — 3rd place competition winner"
+  },
+  {
+    "year": 2021,
+    "type": "conference",
+    "first_author": false,
+    "title": "A new decision support system for type 1 diabetes management",
+    "authors": "G. Cappon, G. Noaro, N. Camerlingo, L. Cossu, G. Sparacino, A. Facchinetti",
+    "venue": "IEEE EMBC 2021, Guadalajara, Mexico — oral presentation"
+  },
+  {
+    "year": 2020,
+    "type": "conference",
+    "first_author": true,
+    "title": "A new integrated platform for gathering and managing multivariable and multisensor data in diabetes clinical studies",
+    "authors": "L. Cossu, G. Cappon, G. Sparacino, A. Facchinetti",
+    "venue": "IEEE EHB 2020 — oral presentation"
+  },
+  {
+    "year": 2024,
+    "type": "book",
+    "first_author": false,
+    "title": "Optimizing Remote Health Monitoring for Digital Platforms: Evaluating the Efficacy of Gamification in Enhancing Data Collection",
+    "authors": "M. Atzeni, L. Cossu, G. Cappon, M. Vettoretti",
+    "venue": "Digital Health and Informatics Innovations for Sustainable Health Care Systems, IOS Press, 2024"
+  },
+  {
+    "year": 2024,
+    "type": "book",
+    "first_author": false,
+    "title": "Detection of Self-Reported Stress Level from Wearable Sensor Data Using Machine Learning and Deep Learning-Based Classifiers: Is It Feasible?",
+    "authors": "M. Atzeni, L. Cossu, G. Cappon, M. Vettoretti",
+    "venue": "Human Activity and Behavior Analysis Book, CRC Press, 2024"
+  }
+]

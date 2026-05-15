@@ -1,0 +1,112 @@
+{
+  "summary": "190 hours of teaching assistant activities and 14 co-advised master's theses.",
+  "courses": [
+    {
+      "period": "AY 21/22 – 25/26",
+      "title": "Biomedical Wearable Technologies for Healthcare and Wellbeing",
+      "subtitle": "Master's in Bioengineering · ~30 h/year · ~40–100 students",
+      "description": "Lab support, project supervision, written exam preparation, technical expert in project discussions."
+    },
+    {
+      "period": "AY 21/22 – 25/26",
+      "title": "Medical Informatics",
+      "subtitle": "Bachelor's in Biomedical Engineering · ~20 h/year · ~150–200 students",
+      "description": "Weekly homework management, task preparation, evaluation of submissions with oral examination."
+    },
+    {
+      "period": "2025 - 2026",
+      "title": "Seminar: Software as Medical Device",
+      "subtitle": "Clinical Engineering · Master's in Bioengineering · ~40 students",
+      "description": "Invited seminar on regulatory aspects and design of software as a medical device."
+    },
+    {
+      "period": "2025 - 2026",
+      "title": "Seminar: The AI Act for Clinical Engineers",
+      "subtitle": "Clinical Engineering · Master's in Bioengineering · ~40 students",
+      "description": "Invited seminar on the EU AI Act and its implications for clinical engineering practice."
+    },
+    {
+      "period": "2025 - 2026",
+      "title": "Seminar: Development of a real-life database for multicentric clinical trials",
+      "subtitle": "Medical Informatics · Bachelor's in Biomedical Engineering · ~200 students",
+      "description": "Invited seminar on real-world database design and management for clinical trial data."
+    }
+  ],
+  "theses": [
+    {
+      "period": "2024–2025",
+      "name": "Lorenzo Semenzato",
+      "title": "Development of a reinforcement learning-based meal insulin bolus calculator for pediatric T1D under MDI therapy"
+    },
+    {
+      "period": "2024–2025",
+      "name": "Alessandro Casarin",
+      "title": "Co-design and implementation of a clinical web application for pediatric T1D data analysis and management"
+    },
+    {
+      "period": "2024",
+      "name": "Alberto Presti",
+      "title": "Optimizing Insulin Delivery Patterns in Continuous Infusion Systems Using Reinforcement Learning in a Digital Twin Environment"
+    },
+    {
+      "period": "2024",
+      "name": "Saiok Miah",
+      "title": "Large Language Models to summarize and improve the interpretability of AGP reports in T1D clinical practice"
+    },
+    {
+      "period": "2023–2024",
+      "name": "Valentina Santi",
+      "title": "Validation and integration of a real-time meal detection algorithm leveraging CGM and heart rate signals"
+    },
+    {
+      "period": "2025",
+      "name": "Pietro Ruzzante",
+      "title": "Development of a LLM-based decision support system for type 1 diabetes"
+    },
+    {
+      "period": "2026 (ongoing)",
+      "name": "Alberto Grespan",
+      "title": "Evaluation of environmental pollution on glucose control in type 2 diabetes"
+    },
+    {
+      "period": "2025",
+      "name": "Anna Ghiotto",
+      "title": "Development of a web-based digital twin tool for type 1 diabetes"
+    },
+    {
+      "period": "2025",
+      "name": "Francesco Izzi",
+      "title": "Digital Twin-based clustering of glucose traces to identify common parameter distributions"
+    },
+    {
+      "period": "2025",
+      "name": "Elena Diurno",
+      "title": "Comparative Analysis and Development of a Novel Real-Time Meal Detection Algorithm Using HR and CGM Data"
+    },
+    {
+      "period": "2022–2023",
+      "name": "Luca Fracassetti",
+      "title": "Ad-hoc study for evaluating the accuracy of commercially available smartwatches for heart rate measurement"
+    },
+    {
+      "period": "2022",
+      "name": "Luca Leoni",
+      "title": "Bayesian smoothing of heart rate variability signals in ALS and MS patients"
+    },
+    {
+      "period": "2022",
+      "name": "Lorenzo Carlo Causin",
+      "title": "Development, design and usability evaluation of an administrative web interface for IMPACT"
+    },
+    {
+      "period": "2021–2022",
+      "name": "Enrico Marangon",
+      "title": "Development of a web monitoring interface for a mobile platform for clinical trial conduction"
+    },
+    {
+      "period": "2021",
+      "name": "Maria Zanon",
+      "title": "Design of a pipeline for processing vital signals from wearable sensors in individuals with chronic diseases"
+    }
+  ]
+}
