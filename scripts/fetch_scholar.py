@@ -13,7 +13,7 @@ def fetch():
     from scholarly import scholarly
 
     author = scholarly.search_author_id(SCHOLAR_ID)
-    author = scholarly.fill(author, sections=["basics"])
+    author = scholarly.fill(author, sections=["indices"])
 
     return {
         "hindex":   author.get("hindex"),
@@ -29,5 +29,5 @@ if __name__ == "__main__":
         OUT.write_text(json.dumps(data, indent=2) + "\n")
         print(f"OK — h-index={data['hindex']}, citedby={data['citedby']}, updated={data['updated']}")
     except Exception as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
+        print(f"SCRIPT ERROR: {exc}", file=sys.stderr)
         sys.exit(1)
