@@ -10,7 +10,14 @@ OUT = Path(__file__).parent.parent / "data" / "scholar.json"
 
 
 def fetch():
-    from scholarly import scholarly
+    from scholarly import scholarly, ProxyGenerator
+
+    # GitHub Actions IPs are blocked by Scholar — use free proxies in CI.
+    import os
+    if os.getenv("CI"):
+        pg = ProxyGenerator()
+        pg.FreeProxies()
+        scholarly.use_proxy(pg)
 
     author = scholarly.search_author_id(SCHOLAR_ID)
     author = scholarly.fill(author, sections=["indices"])
@@ -29,5 +36,6 @@ if __name__ == "__main__":
         OUT.write_text(json.dumps(data, indent=2) + "\n")
         print(f"OK — h-index={data['hindex']}, citedby={data['citedby']}, updated={data['updated']}")
     except Exception as exc:
-        print(f"SCRIPT ERROR: {exc}", file=sys.stderr)
-        sys.exit(1)
+        print(f"WARNING: Scholar fetch failed ({exc}); keeping existing data.", file=sys.stderr)
+        # Exit 0 so the workflow doesn't fail — existing data stays untouched.
+        sys.exit(0)

@@ -18,8 +18,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install scholarly
-        run: pip install scholarly
+      - name: Install dependencies
+        run: pip install scholarly free-proxy
 
       - name: Fetch Scholar stats
         run: python scripts/fetch_scholar.py
