@@ -18,10 +18,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install scholarly free-proxy "httpx<0.28"
-
-      - name: Fetch Scholar stats
+      - name: Fetch citation stats
         run: python scripts/fetch_scholar.py
 
       - name: Commit updated stats

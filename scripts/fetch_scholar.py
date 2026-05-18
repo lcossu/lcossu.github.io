@@ -1,31 +1,26 @@
-"""Fetches h-index and citation count from Google Scholar and writes data/scholar.json."""
+"""Fetches citation metrics from OpenAlex via ORCID and writes data/scholar.json."""
 
 import json
 import sys
+import urllib.request
 from datetime import date
 from pathlib import Path
 
-SCHOLAR_ID = "QYEOj6wAAAAJ"
+ORCID = "0000-0002-8804-0722"
+OPENALEX_URL = f"https://api.openalex.org/authors/https://orcid.org/{ORCID}"
 OUT = Path(__file__).parent.parent / "data" / "scholar.json"
 
 
 def fetch():
-    from scholarly import scholarly, ProxyGenerator
+    req = urllib.request.Request(OPENALEX_URL, headers={"User-Agent": "lcossu.github.io/1.0"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        author = json.loads(resp.read())
 
-    # GitHub Actions IPs are blocked by Scholar — use free proxies in CI.
-    import os
-    if os.getenv("CI"):
-        pg = ProxyGenerator()
-        pg.FreeProxies()
-        scholarly.use_proxy(pg)
-
-    author = scholarly.search_author_id(SCHOLAR_ID)
-    author = scholarly.fill(author, sections=["indices"])
-
+    stats = author.get("summary_stats", {})
     return {
-        "hindex":   author.get("hindex"),
-        "citedby":  author.get("citedby"),
-        "i10index": author.get("i10index"),
+        "hindex":   stats.get("h_index"),
+        "citedby":  author.get("cited_by_count"),
+        "i10index": stats.get("i10_index"),
         "updated":  str(date.today()),
     }
 
@@ -36,6 +31,5 @@ if __name__ == "__main__":
         OUT.write_text(json.dumps(data, indent=2) + "\n")
         print(f"OK — h-index={data['hindex']}, citedby={data['citedby']}, updated={data['updated']}")
     except Exception as exc:
-        print(f"WARNING: Scholar fetch failed ({exc}); keeping existing data.", file=sys.stderr)
-        # Exit 0 so the workflow doesn't fail — existing data stays untouched.
+        print(f"WARNING: fetch failed ({exc}); keeping existing data.", file=sys.stderr)
         sys.exit(0)
